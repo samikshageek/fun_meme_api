@@ -7,7 +7,7 @@ mongoose.connect(url) ,{useNewUrlParser :true};
 
 const con = mongoose.connection;
 con.on('open', function(){
-   console.log("connected")  ;
+   console.log("connected...congratulations")  ;
 
 })
 
