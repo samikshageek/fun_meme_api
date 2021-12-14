@@ -15,9 +15,9 @@ con.on('open', function(){
 app.use(express.json());
 
 const router = require('./routers/routers');
-app.use('/memes', router) ;
+//app.use('/memes', router) ;
 
-
+app.use('/', router) ;
 app.listen(process.env.PORT || 3000, () => {
     console.log("Express server listening on port %d in %s mode", process.env.PORT , app.settings.env);
 })
