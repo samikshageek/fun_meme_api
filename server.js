@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const url ="mongodb://localhost/memeDB" ;
+//const url ="mongodb://localhost/memeDB" ;
+const url = process.env.MONGODB_URI || 'mongodb://localhost/memeDB' ;
 
 const app = express();
 mongoose.connect(url) ,{useNewUrlParser :true};
