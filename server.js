@@ -17,6 +17,6 @@ const router = require('./routers/routers');
 app.use('/memes', router) ;
 
 
-app.listen(9000, () => {
-    console.log("server up and running on port 9000");
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Express server listening on port %d in %s mode", process.env.PORT , app.settings.env);
 })
