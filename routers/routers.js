@@ -5,14 +5,14 @@ const router = express.Router();
 
 router.get('/',  async(req, res) =>{
   const allMemes = require('../datamodel/memeModel')  ;
-
-  try{
-      const memes = await allMemes.find();
-      res.json(memes);
-    }
-  catch(error){
-      console.log("Error occured, sorry for inconvenience . Please try again");
-  }
+  res.send("Rest api deployment successful");
+  // try{
+  //     const memes = await allMemes.find();
+  //     res.json(memes);
+  //   }
+  // catch(error){
+  //     console.log("Error occured, sorry for inconvenience . Please try again");
+  // }
 })
 
 
