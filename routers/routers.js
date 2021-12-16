@@ -42,7 +42,8 @@ router.post('/trending', async(req, res) =>{
     res.json(memes[random]);
   }
   catch(error){
-    res.send(500).send("Error occured. Sorry for inconvenience ")
+    //res.send(500).send("Error occured. Sorry for inconvenience ")
+    next(error);
     console.log("Error occured. Sorry for inconvenience ");
   }
   
