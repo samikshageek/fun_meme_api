@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "MONGODB_URI=http://localhost:27017 node server.js"
+    "start" : "MONGODB_URI=http://localhost:27017/memeDB node server.js"
   },
   "author": "Samiksha Ranjan",
   "license": "ISC",
