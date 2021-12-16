@@ -35,8 +35,9 @@ router.post('/', async(req,res) =>{
 router.post('/trending', async(req, res) =>{
   console.log("Trending section");
   const allMemes = require('../datamodel/memeModel');
-  const memes= await allMemes.find();
+  
   try{
+    const memes= await allMemes.find();
     const random = Math.floor(Math.random() * memes.length);
     res.json(memes[random]);
   }
