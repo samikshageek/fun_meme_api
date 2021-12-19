@@ -44,6 +44,7 @@ router.post('/trending', async(req, res) =>{
   catch(error){
     //res.send(500).send("Error occured. Sorry for inconvenience ")
     next(error);
+    res.send("Error occured. Sorry for inconvenience ");
     console.log("Error occured. Sorry for inconvenience ");
   }
   
