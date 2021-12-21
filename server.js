@@ -8,7 +8,8 @@ const result = dotenv.config({silent: true}) ;
 const url = process.env.MONGODB_URI || 'mongodb://localhost/memeDB' ;
 
 const app = express();
-mongoose.connect(url) ,{useNewUrlParser :true};
+mongoose.connect(url,{useNewUrlParser :true}).then(() => console.log( 'Database Connected' ))
+.catch(err => console.log( err ));;
 
 const con = mongoose.connection;
 con.on('open', function(){
