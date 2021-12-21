@@ -5,17 +5,17 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "MONGODB_URI=http://localhost:27017/memeDB node server.js"
+    "start": "node server.js"
   },
   "author": "Samiksha Ranjan",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongodb": "^4.2.1",
     "mongoose": "^6.1.0"
   },
-  "engines":{
+  "engines": {
     "node": "14.17.0"
   }
-
 }
