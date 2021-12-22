@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 
 //const result = dotenv.config();
 const result = dotenv.config({silent: true}) ;
-const url = process.env.MONGODB_URI || 'mongodb://localhost/memeDB' ;
+const url = process.env.MONGODB_URI ;
 
 const app = express();
 mongoose.connect(url,{useNewUrlParser :true, useUnifiedTopology: true }).then(() => console.log( 'Database Connected' ))
