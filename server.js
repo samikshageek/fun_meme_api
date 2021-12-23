@@ -25,6 +25,6 @@ const router = require('./routers/routers');
 app.use('/', router) ;
 app.listen(process.env.PORT || 3000, () => {
     console.log("Express server listening on port %d in %s mode", process.env.PORT , app.settings.env);
-    console.log('mongodb url : ', url, process.env.MONGODB_URI);
-    console.log(result.error);
+    
+    
 })
