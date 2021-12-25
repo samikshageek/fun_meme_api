@@ -39,9 +39,8 @@ router.post('/trending', async(req, res) =>{
   try{
     const memes= await allMemes.find();
     const random = Math.floor(Math.random() * memes.length);
-    //res.json(memes[random]);
-    let meme = memes[random];
-    res.send(memes[random].url);
+    res.send(memes[random]);
+    
   }
   catch(error){
     //res.send(500).send("Error occured. Sorry for inconvenience ")
