@@ -48,5 +48,22 @@ router.post('/trending', async(req, res) =>{
     console.log("Error occured. Sorry for inconvenience ");
   }
   
+});
+
+
+router.post('/memes/ExploreTemplate', async(req, res) => {
+ 
+  console.log("req", req.body.memeType);
+  const allMemes = require('../datamodel/memeModel');
+
+  try{
+    const memes = await allMemes.find();
+    const result = memes.find(item => item.memeType === req.body.memeType);
+    res.send(result);
+  }
+  catch(error){
+    next(error);
+  }
+
 })
 module.exports = router;
