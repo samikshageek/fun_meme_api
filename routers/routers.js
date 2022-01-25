@@ -66,4 +66,26 @@ router.post('/memes/ExploreTemplate', async(req, res) => {
   }
 
 })
+
+router.post('/memes/ExploreMemes',async(req,res) => {
+  console.log("request", req.body.memeType);
+
+  const allMemes= require('../datamodel/memeModel');
+  const result =[];
+  try{
+    const memes =await allMemes.find();
+    memes.map(item => {
+      if(item.memeType === req.body.memeType){
+        result.push(item);
+        
+      }
+      
+    })
+    
+    res.send(result);
+  }
+  catch(error){
+    next(error);
+  }
+})
 module.exports = router;
