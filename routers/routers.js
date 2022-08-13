@@ -37,7 +37,8 @@ router.post('/addTemplates' , async(req, res) =>{
   try{
     let templateNameObj = new templateNameModel({
       templateName : req.body.templateName ,
-      url : req.body.url
+      url : req.body.url,
+      text : req.body.text
     })
     const data = await templateNameObj.save();
     res.json(data);
@@ -45,7 +46,7 @@ router.post('/addTemplates' , async(req, res) =>{
   catch(error){
     let message={ error : "Please Try again "} ;
 
-    res.json(message);
+    res.json(error);
   }
 })
 

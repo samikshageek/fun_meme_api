@@ -9,6 +9,10 @@ const templateSchema = new mongoose.Schema({
     url:{
         type :String,
         required : true 
+    },
+    text:{
+        type: String,
+        required: true
     }
 });
 
