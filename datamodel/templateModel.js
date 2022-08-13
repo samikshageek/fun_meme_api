@@ -5,6 +5,10 @@ const templateSchema = new mongoose.Schema({
         type : String,
         required: false,
         default : "Birthday"
+    },
+    url:{
+        type :String,
+        required : true 
     }
 });
 

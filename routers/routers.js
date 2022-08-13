@@ -36,7 +36,8 @@ router.post('/addTemplates' , async(req, res) =>{
 
   try{
     let templateNameObj = new templateNameModel({
-      templateName : req.body.templateName 
+      templateName : req.body.templateName ,
+      url : req.body.url
     })
     const data = await templateNameObj.save();
     res.json(data);
