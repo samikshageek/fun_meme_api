@@ -1,4 +1,5 @@
 const express  = require('express');
+const res = require('express/lib/response');
 const { findById} = require('../datamodel/memeModel');
 
 const router = express.Router();
@@ -15,6 +16,37 @@ router.get('/',  async(req, res) =>{
   }
 })
 
+router.get('/allTemplates', async(req , res ) => {
+  const templateNameModel = require('../datamodel/templateModel');
+
+  try{
+    const data = await templateNameModel.find();
+    res.json(data);
+  }
+  catch(error){
+    let message={
+      error:"Oops !!! Something Went Wrong"
+    }
+    res.json(message);
+  }
+})
+
+router.post('/addTemplates' , async(req, res) =>{
+  const templateNameModel = require('../datamodel/templateModel');
+
+  try{
+    let templateNameObj = new templateNameModel({
+      templateName : req.body.templateName 
+    })
+    const data = await templateNameObj.save();
+    res.json(data);
+  }
+  catch(error){
+    let message={ error : "Please Try again "} ;
+
+    res.json(message);
+  }
+})
 
 router.post('/', async(req,res) =>{
     const meme = require('../datamodel/memeModel');
